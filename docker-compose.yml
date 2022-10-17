@@ -7,8 +7,6 @@ services:
     image: *spark-image
     environment:
       - SPARK_MODE=master
-    # networks:
-    #   - spark
     volumes:
       - ./work:/opt/bitnami/spark/work      
     restart: unless-stopped      
@@ -31,9 +29,7 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     ports:
-      - "8081:8081"         
-    # networks:
-    #   - spark
+      - "8081:8081"
     restart: unless-stopped   
   spark_node_two:
     container_name: spark_node_two
@@ -50,12 +46,5 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     ports:
-      - "8082:8081"         
-    # networks:
-    #   - spark
+      - "8082:8081"     
     restart: unless-stopped               
-# networks:
-#   spark:
-#     name: spark_spark
-#     driver: bridge
-#     external: true
