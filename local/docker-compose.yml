@@ -46,5 +46,5 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     ports:
-      - "8082:8081"     
-    restart: unless-stopped               
+      - "8082:8081"
+    restart: unless-stopped
